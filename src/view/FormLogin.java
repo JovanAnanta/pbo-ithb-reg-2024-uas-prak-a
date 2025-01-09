@@ -73,18 +73,20 @@ public class FormLogin {
         panel.add(loginButton);
 
         loginButton.addActionListener(e -> {
-            String username = noTelpField.getText();
+            String noTelp = noTelpField.getText();
             String password = new String(inputPassword.getPassword());
 
-            if (!username.isEmpty() && !password.isEmpty()) {
-                Customer verifying = UserController.verifyUser(username, password);
+            if (!noTelp.isEmpty() && !password.isEmpty()) {
+                Customer verifying = UserController.verifyUser(noTelp, password);
                 if (verifying == null) {
-                    JOptionPane.showMessageDialog(frame, "Salah username/password!");
+                    JOptionPane.showMessageDialog(frame, "Salah nomor telepon/password!");
                 } else {
-                    System.out.println("LogIn");
+                    JOptionPane.showMessageDialog(frame, "LogIn berhasil");
+                    frame.dispose();
+                    new MenuCustomer();
                 }
             } else {
-                JOptionPane.showMessageDialog(frame, "Isi terlebih dahulu kawan!");
+                JOptionPane.showMessageDialog(frame, "Isi terlebih dahulu YOK!");
             }
         });
 

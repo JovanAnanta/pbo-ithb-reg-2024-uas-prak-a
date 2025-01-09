@@ -60,24 +60,6 @@ public class MainMenu {
         });
         panel.add(registerButton);
 
-        JButton lupaPassButton = new JButton("Tambah Transaksi Pengiriman");
-        lupaPassButton.setBounds(120, 415, 260, 50);
-        Component.styleButton(lupaPassButton, new Color(3, 123, 252), buttonFont);
-        lupaPassButton.addActionListener(e -> {
-            frame.dispose();
-            // new FormVerifikasiEmail();
-        });
-        panel.add(lupaPassButton);
-
-        JButton reportButton = new JButton("History Paket");
-        reportButton.setBounds(120, 485, 260, 50);
-        Component.styleButton(reportButton, new Color(3, 123, 252), buttonFont);
-        reportButton.addActionListener(e -> {
-            frame.dispose();
-            // new FormReportUser();
-        });
-        panel.add(reportButton);
-
         JButton exitButton = new JButton("EXIT");
         exitButton.setBounds(120, 600, 260, 50);
         Component.styleButton(exitButton, new Color(255, 69, 58), buttonFont);

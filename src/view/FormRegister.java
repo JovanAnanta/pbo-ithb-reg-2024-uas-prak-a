@@ -98,12 +98,15 @@ public class FormRegister {
             String password = new String(inputPassword.getPassword());
 
             if (!name.isEmpty() && !password.isEmpty() && !address.isEmpty() && !noTelp.isEmpty()) {
-                boolean verify = UserController.verifyRegister(password, name, address, noTelp);
+                boolean verify = UserController.verifyRegister(noTelp, password, name, address);
                 if (verify) {
                     frame.dispose();
                     new MainMenu();
                 } else {
-                    JOptionPane.showMessageDialog(frame, "Name/email sudah terdaftar!");
+                    JOptionPane.showMessageDialog(frame,
+                            "Name/Nomor Telepon sudah terdaftar!",
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
                 }
             } else {
                 JOptionPane.showMessageDialog(frame, "Isi terlebih dahulu yak!");

@@ -13,8 +13,9 @@ public class Transaction {
     private String receiptAddress;
     private String receiptPhone;
 
-    public Transaction(int customerId, String packageType, double packageWeight, int totalCost, Date createdAt,
+    public Transaction(int id, int customerId, String packageType, double packageWeight, int totalCost, Date createdAt,
             String receiptName, String receiptAddress, String receiptPhone) {
+        this.id = id;
         this.customerId = customerId;
         this.packageType = packageType;
         this.packageWeight = packageWeight;
@@ -96,4 +97,18 @@ public class Transaction {
     public void setReceiptPhone(String receiptPhone) {
         this.receiptPhone = receiptPhone;
     }
+
+    public static double roundBerat(double selectedWeight) {
+        if (selectedWeight < 1) {
+            return 1;
+        }
+
+        double roundedselectedWeight = Math.ceil(selectedWeight);
+        if (selectedWeight - Math.floor(selectedWeight) < 0.5) {
+            return Math.floor(selectedWeight);
+        } else {
+            return roundedselectedWeight;
+        }
+    }
+
 }

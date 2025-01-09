@@ -33,9 +33,6 @@ public class UserController {
 
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                String userId = rs.getString("id");
-                String noTelp = rs.getString("phone");
-
                 Customer loggedInUser = null;
 
                 loggedInUser = fetchNasabah(rs);
