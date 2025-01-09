@@ -1,7 +1,6 @@
 package view;
 
 import javax.swing.*;
-
 import controller.UserController;
 import model.Customer;
 import java.awt.*;
@@ -40,6 +39,15 @@ public class FormLogin {
         panel.setLayout(null);
         panel.setBackground(Color.getHSBColor(0.6f, 0.7f, 0.9f));
         panel.setBounds(0, 0, FRAME_WIDTH, FRAME_HEIGHT);
+
+        ImageIcon originalIcon = new ImageIcon("lib/img2.jpg");
+        Image img = originalIcon.getImage();
+        Image resizedImg = img.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon = new ImageIcon(resizedImg);
+        JLabel imageLabel = new JLabel(resizedIcon);
+
+        imageLabel.setBounds(-15, -10, 200, 200);
+        frame.add(imageLabel);
 
         JLabel title = new JLabel("LOG-IN");
         title.setBounds(200, 150, 500, 50);
@@ -102,6 +110,5 @@ public class FormLogin {
 
         frame.add(panel);
         frame.setVisible(true);
-
     }
 }
