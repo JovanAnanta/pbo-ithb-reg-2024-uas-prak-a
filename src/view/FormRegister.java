@@ -100,6 +100,7 @@ public class FormRegister {
             if (!name.isEmpty() && !password.isEmpty() && !address.isEmpty() && !noTelp.isEmpty()) {
                 boolean verify = UserController.verifyRegister(noTelp, password, name, address);
                 if (verify) {
+                    JOptionPane.showMessageDialog(frame, "Selamat Anda Berhasil Mendaftar!");
                     frame.dispose();
                     new MainMenu();
                 } else {
